@@ -1,0 +1,21 @@
+{
+  "name": "angular-drop",
+  "version": "0.0.0",
+  "authors": [
+    "Gus Bonfant <gbonfant@me.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "~1.2.22",
+    "bootstrap": "~3.2.0",
+    "angular-mocks": "~1.2.22"
+  }
+}
