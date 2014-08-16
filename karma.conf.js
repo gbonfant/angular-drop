@@ -19,6 +19,7 @@ module.exports = function(config) {
       'app/assets/bower/angular-route/angular-route.min.js',
       'app/assets/bower/angular-mocks/angular-mocks.js',
       'app/assets/javascripts/**/*.js',
+      'app/directives/*.html',
       'specs/**/*_spec.js'
     ],
 
@@ -31,6 +32,11 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      'app/directives/*.html': 'ng-html2js'
+    },
+
+    ngHtml2JsPreprocessor: {
+      moduleName: 'templates'
     },
 
 
@@ -59,7 +65,8 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    // browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
