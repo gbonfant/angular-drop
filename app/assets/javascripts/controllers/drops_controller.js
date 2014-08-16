@@ -14,8 +14,8 @@
     //
     // Initialisation calls
     //
-    Api.getDrops().success(angular.bind(this, function(response) {
+    Api.getDrops().success(function(response) {
       DropsFactory.setDrops(response.drops);
-    }));
+    });
   }
 })();
