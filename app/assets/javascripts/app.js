@@ -20,8 +20,8 @@
     })
     .when('/drops/:id/:permalink', {
       templateUrl: '/views/drops/show.html',
-      controller: 'DropsController',
-      controllerAs: 'dropsCtrl'
+      controller: 'DropDetailsController',
+      controllerAs: 'dropCtrl'
     });
   }
 })();
