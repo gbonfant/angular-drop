@@ -1,16 +1,18 @@
 (function() {
   'use strict';
 
-  var baseUrl = 'https://api.farmdrop.co.uk/api/v1/';
+  var baseUrl = 'https://api-release.farmdrop.co.uk/api/v1/';
   var $httpBackend, apiService;
 
   describe('Api service', function() {
-    beforeEach(angular.mock.module('farmdrop'));
+    beforeEach(function() {
+      angular.mock.module('farmdrop.services');
 
-    beforeEach(inject(function($injector, _$httpBackend_) {
-      apiService   = $injector.get('Api');
-      $httpBackend = _$httpBackend_;
-    }));
+      inject(function($injector, _$httpBackend_) {
+        apiService   = $injector.get('Api');
+        $httpBackend = _$httpBackend_;
+      });
+    });
 
     it('should define a url attribute with defaults', function() {
       expect(apiService.url).toEqual(baseUrl);
