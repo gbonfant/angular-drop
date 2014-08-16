@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var element, scope;
+  var element, $scope, scope, template;
 
   var drop = {
     name: 'foobar',
@@ -10,21 +10,23 @@
 
   describe('dropTile', function() {
     beforeEach(function() {
-      angular.module('templates');
+      angular.mock.module('farmdrop');
+      angular.mock.module('templates');
 
-      inject(function($compile, $rootScope) {
-        scope   = $rootScope.$new();
-        element = angular.element('<drop-tile drop="{{drop}}"></drop-tile>');
-
-        scope.drop = drop;
-        element    = $compile(element)(scope);
+      inject(function($compile, $rootScope, $templateCache) {
+        $scope      = $rootScope.$new();
+        $scope.drop = drop;
+        element     = angular.element('<drop-tile drop="drop"></drop-tile>');
+        element     = $compile(element)($scope);
+        scope       = element.scope();
 
         scope.$digest();
       });
     });
 
-    it('should contain an img tag with the proper url', function() {
-      expect(true).toBe(true);
+    it('should assign a image object to the scope', function() {
+      expect(element.isolateScope().image).toBeDefined();
+      expect(element.isolateScope().image.url).toEqual('https://farmdrop.imgix.net/foobar?w=360&h=240&fit=crop');
     });
   });
 })();
