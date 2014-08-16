@@ -14,7 +14,12 @@
     $locationProvider.html5Mode(true);
 
     $routeProvider.when('/', {
-      templateUrl: '../../views/drops/index.html',
+      templateUrl: '/views/drops/index.html',
+      controller: 'DropsController',
+      controllerAs: 'dropsCtrl'
+    })
+    .when('/drops/:id/:permalink', {
+      templateUrl: '/views/drops/show.html',
       controller: 'DropsController',
       controllerAs: 'dropsCtrl'
     });
