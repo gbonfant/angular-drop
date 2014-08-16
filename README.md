@@ -15,3 +15,6 @@ $ npm install
 
 ## Running the tests
 ``$ karma start``
+
+## Folder structure
+The angular app lives under ``app/assets/javascripts``, directives' templates are under ``app/directives/``
