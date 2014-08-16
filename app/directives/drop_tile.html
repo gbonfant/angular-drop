@@ -1,0 +1,13 @@
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <h3 class="text-warning text-center">{{drop.name}}</h3>
+
+    <img alt="{{image.alt}}" ng-src="{{image.url}}">
+
+    <div class="caption">
+      <p>{{drop.venue_address.address1}}</p>
+
+      <a class="btn btn-primary" ng-href="/drops/{{drop.id}}/{{drop.permalink}}">View drop</a>
+    </div>
+  </div>
+</div>
