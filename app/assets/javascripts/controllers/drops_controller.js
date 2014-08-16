@@ -3,7 +3,14 @@
 
   angular.module('farmdrop.controllers').controller('DropsController', DropsController);
 
-  function DropsController() {
-    this.helloworld = 'foo';
+  DropsController.$inject = ['Api'];
+
+  function DropsController(Api) {
+    //
+    // Initialisation calls
+    //
+    Api.getDrops().success(angular.bind(this, function(response) {
+      this.drops = response.drops;
+    }));
   }
 })();
