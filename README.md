@@ -1,20 +1,24 @@
 Simple client to Farmdrop's API
 
 ## Dependencies
-The client is served by a thin sinatra server so Ruby 1.9+ is needed. Unit tests are run via karma so node/npm is needed for that as well.
+- Ruby 1.9+
+- Bundler
+- NodeJS
+- NPM
+
+The client code is served by a thin sinatra server, and unit tests are run via karma.
 
 ## Bootstrapping
 ```bash
-$ gem install bundler
 $ bundle install
 $ npm install
 ```
 
 ## Starting the server
-``$ rackup ``
+Run ``$ rackup `` and visit [http://localhost:9292/](http://localhost:9292/)
 
 ## Running the tests
 ``$ karma start``
 
 ## Folder structure
-The angular app lives under ``app/assets/javascripts``, directives' templates are under ``app/directives/``
+The angular code lives under ``app/assets/javascripts``
