@@ -29,5 +29,17 @@
         $httpBackend.flush();
       });
     });
+
+    describe('getDrop(:id)', function() {
+      it('should GET /drops/:id endpoint', function() {
+        $httpBackend.expectGET(baseUrl + 'drops/1').respond('foobar');
+
+        apiService.getDrop(1).then(function(response) {
+          expect(response.data).toEqual('foobar');
+        });
+
+        $httpBackend.flush();
+      });
+    });
   });
 })();
