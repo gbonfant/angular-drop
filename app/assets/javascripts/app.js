@@ -16,7 +16,7 @@
     $routeProvider.when('/', {
       templateUrl: '../../views/drops/index.html',
       controller: 'DropsController',
-      controllerAs: 'drops'
+      controllerAs: 'dropsCtrl'
     });
   }
 })();
