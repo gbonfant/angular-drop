@@ -10,9 +10,7 @@
 
   config.$inject = ['$routeProvider', '$locationProvider'];
 
-  function config($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-
+  function config($routeProvider) {
     $routeProvider.when('/', {
       templateUrl: '/views/drops/index.html',
       controller: 'DropsController',
