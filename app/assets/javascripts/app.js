@@ -8,7 +8,7 @@
 
   angular.module('farmdrop').config(config);
 
-  config.$inject = ['$routeProvider', '$locationProvider'];
+  config.$inject = ['$routeProvider'];
 
   function config($routeProvider) {
     $routeProvider.when('/', {
