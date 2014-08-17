@@ -41,5 +41,17 @@
         $httpBackend.flush();
       });
     });
+
+    describe('updateDrop(:drop)', function() {
+      it('should PUT /drops/:id endpoint', function() {
+        $httpBackend.expectPUT(baseUrl + 'drops/1').respond('foobar');
+
+        apiService.updateDrop({ id: 1, name: 'foobar' }).then(function(response) {
+          expect(response.data).toEqual('foobar');
+        });
+
+        $httpBackend.flush();
+      });
+    });
   });
 })();
