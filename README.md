@@ -1,4 +1,4 @@
-Simple client to Farmdrop's API
+Angular client for Farmdrop V4 API `/drop` endpoint.
 
 ## Dependencies
 - Ruby 1.9+
